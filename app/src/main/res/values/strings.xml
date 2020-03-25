@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MyProject</string>
+    <string name="footerItem1">Home</string>
+    <string name="footerItem2">Wallet</string>
+    <string name="footerItem3">Messages</string>
+    <string name="footerItem4">Orders</string>
+    <string name="footerItem5">Account</string>
+    <string name="walletFragmentItem1">Deposit History</string>
+    <string name="walletFragmentItem2">Withdraw Amounts</string>
+    <string name="walletFragmentItem3">Income History</string>
+    <string name="walletFragmentItem4">Outstanding Payment</string>
+    <string name="orderFragmentItem1">Pending</string>
+    <string name="orderFragmentItem2">Approved</string>
+    <string name="orderFragmentItem3">Unpaid</string>
+    <string name="orderFragmentItem4">To Be Shipped</string>
+    <string name="orderFragmentItem5">Shipped</string>
+    <string name="orderFragmentItem6">To Be Reviewed</string>
+    <string name="orderFragmentItem7">In Dispute</string>
+    <string name="Search">Search</string>
+    <string name="outstandingPaymentItem1">Order</string>
+    <string name="outstandingPaymentItem2">Customer</string>
+    <string name="outstandingPaymentItem3">Title</string>
+    <string name="outstandingPaymentItem4">Total</string>
+</resources>

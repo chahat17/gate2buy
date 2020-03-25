@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.myproject.ui.fragment.HomeFragment;
 import com.example.myproject.ui.fragment.MessagesFragment;
-import com.example.myproject.ui.NotificationActivity;
+import com.example.myproject.ui.activity.NotificationActivity;
 import com.example.myproject.ui.fragment.OrdersFragment;
 import com.example.myproject.ui.fragment.OutstandingPaymentFragment;
 import com.example.myproject.ui.fragment.WalletFragment;

@@ -1,4 +1,4 @@
-package com.example.myproject.ui;
+package com.example.myproject.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;

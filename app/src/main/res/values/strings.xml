@@ -21,4 +21,8 @@
     <string name="outstandingPaymentItem2">Customer</string>
     <string name="outstandingPaymentItem3">Title</string>
     <string name="outstandingPaymentItem4">Total</string>
+    <string name="registerActivityItem1">EMAIL ADDRESS</string>
+    <string name="registerActivityItem2">PASSWORD</string>
+    <string name="registerActivityItem3">TOKEN KEY</string>
+    <string name="registerActivityButton">LOGIN</string>
 </resources>

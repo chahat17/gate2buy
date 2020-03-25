@@ -5,4 +5,5 @@
     <dimen name="elevation">15dp</dimen>
     <dimen name="walletItemMargin">48dp</dimen>
     <dimen name="orderItemMargin">32dp</dimen>
+    <dimen name="loginImageSize">100dp</dimen>
 </resources>

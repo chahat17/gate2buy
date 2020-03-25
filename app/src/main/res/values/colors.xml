@@ -8,4 +8,6 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="Searchbtn">#F19A42</color>
     <color name="viewColor">#40000000</color>
+    <color name="colorRegisterField">#131317</color>
+    <color name="colorRegisterText">#999999</color>
 </resources>

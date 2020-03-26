@@ -1,28 +1,28 @@
 <resources>
     <string name="app_name">MyProject</string>
-    <string name="footerItem1">Home</string>
-    <string name="footerItem2">Wallet</string>
-    <string name="footerItem3">Messages</string>
-    <string name="footerItem4">Orders</string>
-    <string name="footerItem5">Account</string>
-    <string name="walletFragmentItem1">Deposit History</string>
-    <string name="walletFragmentItem2">Withdraw Amounts</string>
-    <string name="walletFragmentItem3">Income History</string>
-    <string name="walletFragmentItem4">Outstanding Payment</string>
-    <string name="orderFragmentItem1">Pending</string>
-    <string name="orderFragmentItem2">Approved</string>
-    <string name="orderFragmentItem3">Unpaid</string>
-    <string name="orderFragmentItem4">To Be Shipped</string>
-    <string name="orderFragmentItem5">Shipped</string>
-    <string name="orderFragmentItem6">To Be Reviewed</string>
-    <string name="orderFragmentItem7">In Dispute</string>
-    <string name="Search">Search</string>
-    <string name="outstandingPaymentItem1">Order</string>
-    <string name="outstandingPaymentItem2">Customer</string>
-    <string name="outstandingPaymentItem3">Title</string>
-    <string name="outstandingPaymentItem4">Total</string>
-    <string name="registerActivityItem1">EMAIL ADDRESS</string>
-    <string name="registerActivityItem2">PASSWORD</string>
-    <string name="registerActivityItem3">TOKEN KEY</string>
-    <string name="registerActivityButton">LOGIN</string>
+    <string name="footerItem1" translatable="false">Home</string>
+    <string name="footerItem2" translatable="false">Wallet</string>
+    <string name="footerItem3" translatable="false">Messages</string>
+    <string name="footerItem4" translatable="false">Orders</string>
+    <string name="footerItem5" translatable="false">Account</string>
+    <string name="walletFragmentItem1" translatable="false">Deposit History</string>
+    <string name="walletFragmentItem2" translatable="false">Withdraw Amounts</string>
+    <string name="walletFragmentItem3" translatable="false">Income History</string>
+    <string name="walletFragmentItem4" translatable="false">Outstanding Payment</string>
+    <string name="orderFragmentItem1" translatable="false">Pending</string>
+    <string name="orderFragmentItem2" translatable="false">Approved</string>
+    <string name="orderFragmentItem3" translatable="false">Unpaid</string>
+    <string name="orderFragmentItem4" translatable="false">To Be Shipped</string>
+    <string name="orderFragmentItem5" translatable="false">Shipped</string>
+    <string name="orderFragmentItem6" translatable="false">To Be Reviewed</string>
+    <string name="orderFragmentItem7" translatable="false">In Dispute</string>
+    <string name="Search" translatable="false">Search</string>
+    <string name="outstandingPaymentItem1" translatable="false">Order</string>
+    <string name="outstandingPaymentItem2" translatable="false">Customer</string>
+    <string name="outstandingPaymentItem3" translatable="false">Title</string>
+    <string name="outstandingPaymentItem4" translatable="false">Total</string>
+    <string name="registerActivityItem1" translatable="false">EMAIL ADDRESS</string>
+    <string name="registerActivityItem2" translatable="false">PASSWORD</string>
+    <string name="registerActivityItem3" translatable="false">TOKEN KEY</string>
+    <string name="registerActivityButton" translatable="false">LOGIN</string>
 </resources>

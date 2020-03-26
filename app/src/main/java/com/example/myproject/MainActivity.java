@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -61,22 +62,23 @@ public class MainActivity extends AppCompatActivity {
         notification_iv = findViewById(R.id.notification_iv);
         back_iv = findViewById(R.id.back_iv);
 
-        back_iv.setVisibility(View.GONE);
+        back_iv.setVisibility(View.VISIBLE);
 
         setAllFooterItemsDefault();
-        messages.setBackgroundColor(getResources().getColor(R.color.colorBlack));
-        messages_tv.setTextColor(getResources().getColor(R.color.colorWhite));
-        messages_iv.setImageResource(R.drawable.messages_white);
-        openMessagesFragment();
+        home.setBackgroundColor(getResources().getColor(R.color.colorBlack));
+        home_tv.setTextColor(getResources().getColor(R.color.colorWhite));
+        home_iv.setImageResource(R.drawable.orders_white);
+        openHomeFragment();
 
         back_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setAllFooterItemsDefault();
-                wallet.setBackgroundColor(getResources().getColor(R.color.colorBlack));
-                wallet_tv.setTextColor(getResources().getColor(R.color.colorWhite));
-                wallet_iv.setImageResource(R.drawable.wallet_white);
-                openWalletFragment();
+//                wallet.setBackgroundColor(getResources().getColor(R.color.colorBlack));
+//                wallet_tv.setTextColor(getResources().getColor(R.color.colorWhite));
+//                wallet_iv.setImageResource(R.drawable.wallet_white);
+//                openWalletFragment();
+                finish();
             }
         });
 
@@ -155,6 +157,9 @@ public class MainActivity extends AppCompatActivity {
         back_iv.setVisibility(View.GONE);
         headerTitle.setText("My Wallet");
         FragmentManager manager = getSupportFragmentManager();
+        for (int i = manager.getBackStackEntryCount(); i > 0; i--) {
+            manager.popBackStack();
+        }
         FragmentTransaction transaction = manager.beginTransaction();
 
         walletFragment = new WalletFragment();
@@ -168,6 +173,9 @@ public class MainActivity extends AppCompatActivity {
         back_iv.setVisibility(View.GONE);
         headerTitle.setText("Messages");
         FragmentManager manager = getSupportFragmentManager();
+        for (int i = manager.getBackStackEntryCount(); i > 0; i--) {
+            manager.popBackStack();
+        }
         FragmentTransaction transaction = manager.beginTransaction();
 
         messagesFragment = new MessagesFragment();
@@ -181,6 +189,9 @@ public class MainActivity extends AppCompatActivity {
         back_iv.setVisibility(View.GONE);
         headerTitle.setText("Orders");
         FragmentManager manager = getSupportFragmentManager();
+        for (int i = manager.getBackStackEntryCount(); i > 0; i--) {
+            manager.popBackStack();
+        }
         FragmentTransaction transaction = manager.beginTransaction();
 
         ordersFragment = new OrdersFragment();
@@ -194,6 +205,9 @@ public class MainActivity extends AppCompatActivity {
         back_iv.setVisibility(View.VISIBLE);
         headerTitle.setText("Outstanding Payment");
         FragmentManager manager = getSupportFragmentManager();
+        for (int i = manager.getBackStackEntryCount(); i > 0; i--) {
+            manager.popBackStack();
+        }
         FragmentTransaction transaction = manager.beginTransaction();
 
         outstandingPaymentFragment = new OutstandingPaymentFragment();
@@ -203,10 +217,13 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    private void openHomeFragment() {
-        back_iv.setVisibility(View.GONE);
+    public void openHomeFragment() {
+        back_iv.setVisibility(View.VISIBLE);
         headerTitle.setText("Home");
         FragmentManager manager = getSupportFragmentManager();
+        for (int i = manager.getBackStackEntryCount(); i > 0; i--) {
+            manager.popBackStack();
+        }
         FragmentTransaction transaction = manager.beginTransaction();
 
         homeFragment = new HomeFragment();
@@ -216,4 +233,9 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+            super.onBackPressed();
+            finish();
+    }
 }

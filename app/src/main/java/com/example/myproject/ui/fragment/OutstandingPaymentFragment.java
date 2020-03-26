@@ -71,4 +71,5 @@ public class OutstandingPaymentFragment extends Fragment {
         outstandingPaymentList.add(new OutstandingPayment("419","Johnson","Trappe","4903.00"));
         outstandingPaymentList.add(new OutstandingPayment("420","Johnson","Trappe","5903.00"));
     }
+
 }

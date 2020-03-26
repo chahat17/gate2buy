@@ -57,6 +57,8 @@ public class HomeFragment extends Fragment {
 
     }
 
+
+
     private void initHomeList() {
         homeList=new ArrayList<>();
         homeList.add(new Home("Product 1","Order ID : OP1011","To Be Reviewed"));
@@ -65,4 +67,6 @@ public class HomeFragment extends Fragment {
         homeList.add(new Home("Product 4","Order ID : OP1014","To Be Reviewed"));
 
     }
+
+
 }

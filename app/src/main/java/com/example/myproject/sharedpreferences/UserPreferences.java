@@ -30,7 +30,7 @@ public class UserPreferences {
     }
 
     public String getLanguage(){
-        return this.userSharedPreferences.getString(LANGUAGE,"");
+        return this.userSharedPreferences.getString(LANGUAGE,"en");
     }
 
     public String getLanguageResponse(){

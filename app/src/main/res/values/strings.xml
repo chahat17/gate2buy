@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyProject</string>
+    <string name="app_name">Gate2Buy</string>
     <string name="footerItem1" translatable="false">Home</string>
     <string name="footerItem2" translatable="false">Wallet</string>
     <string name="footerItem3" translatable="false">Messages</string>

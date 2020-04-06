@@ -5,15 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myproject.R;
-import com.example.myproject.model.Login.LoginRepo;
+import com.example.myproject.model.ApiRepository;
 import com.example.myproject.model.Login.LoginResponseBody;
+import com.example.myproject.model.getlanguage.GetLanguageResponseBody;
+import com.example.myproject.model.getprofile.GetProfileResponseBody;
 
 import io.reactivex.observers.DisposableObserver;
 
@@ -23,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText email_et,password_et,tokenKey_et;
     private Button login_btn;
-    LoginRepo loginRepo=LoginRepo.getLoginRepo();
+    ApiRepository apiRepository = ApiRepository.getApiRepository();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,10 +43,10 @@ public class RegisterActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginRepo.setEmail(email_et.getText().toString());
-                loginRepo.setPassword(password_et.getText().toString());
-                loginRepo.setKey(tokenKey_et.getText().toString());
-                getResponse();
+                apiRepository.setEmail(email_et.getText().toString());
+                apiRepository.setPassword(password_et.getText().toString());
+                apiRepository.setKey(tokenKey_et.getText().toString());
+                getLoginResponse();
             }
         });
 
@@ -53,14 +54,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void getResponse() {
-        DisposableObserver<LoginResponseBody> disposableObserver=loginRepo.getDataFromLoginAPI().
+    private void getLoginResponse() {
+        DisposableObserver<LoginResponseBody> disposableObserver= apiRepository.getDataFromLoginAPI(this).
                 subscribeWith(new DisposableObserver<LoginResponseBody>() {
                     @Override
                     public void onNext(LoginResponseBody loginResponseBody) {
                         if(loginResponseBody.getStatusCode()==200){
-                            Intent i =new Intent(getApplicationContext(),LoginActivity.class);
-                            startActivity(i);
+                            getProfileResponse();
                         }
                     }
 
@@ -72,6 +72,50 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete() {
 
+                    }
+                });
+    }
+
+    private void getProfileResponse() {
+        DisposableObserver<GetProfileResponseBody> disposableObserver = apiRepository.getProfileDataFromApi(this).
+                subscribeWith(new DisposableObserver<GetProfileResponseBody>() {
+                    @Override
+                    public void onNext(GetProfileResponseBody getProfileResponseBody) {
+                        if(getProfileResponseBody.getStatusCode()==200) {
+                            getLanguageResponse();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    private void getLanguageResponse() {
+        DisposableObserver<GetLanguageResponseBody> disposableObserver = apiRepository.getLanguageDataFromApi(this).
+                subscribeWith(new DisposableObserver<GetLanguageResponseBody>() {
+                    @Override
+                    public void onNext(GetLanguageResponseBody getLanguageResponseBody) {
+                        if(getLanguageResponseBody.getStatusCode()==200) {
+                            Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(i);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
                     }
                 });
     }

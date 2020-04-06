@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class LoginResponseBody {
     private static LoginResponseBody loginResponseBody;
 
-    public LoginResponseBody() {
+    private LoginResponseBody() {
 
     }
 
@@ -31,12 +31,12 @@ public class LoginResponseBody {
     private LoginDataRes data;
 
 
-    public LoginResponseBody(String status, Integer statusCode, String message, LoginDataRes data) {
-        this.status = status;
-        this.statusCode = statusCode;
-        this.message = message;
-        this.data = data;
-    }
+//    public LoginResponseBody(String status, Integer statusCode, String message, LoginDataRes data) {
+//        this.status = status;
+//        this.statusCode = statusCode;
+//        this.message = message;
+//        this.data = data;
+//    }
 
     public String getStatus() {
         return status;
